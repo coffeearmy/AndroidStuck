@@ -1,0 +1,31 @@
+
+(function($)
+{
+    $(document).ready(function()
+    {
+        $.ajaxSetup(
+        {
+            cache: false,
+            beforeSend: function() {
+                $('#content').hide();
+                $('#loading').show();
+            },
+            complete: function() {
+                $('#loading').hide();
+                $('#content').show();
+            },
+            success: function() {
+                $('#loading').hide();
+                $('#content').show();
+            }
+        });
+        var $container = $("#content");
+        $container.load("rss-feed-data.php");
+        var refreshId = setInterval(function()
+        {
+            $container.load('rss-feed-data.php');
+        }, 9000);
+    });
+})(jQuery);
+http://www.jquery4u.com/demos/auto-refresh-div-content/
+http://stackoverflow.com/questions/5510354/how-can-i-auto-update-a-news-feed-with-javascript-without-refreshing-the-whole-p

@@ -1,0 +1,155 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Choose your colors</title> 
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script>
+	$( document ).bind( "mobileinit", function() {
+    // Make your jQuery Mobile framework configuration changes here!
+	$.support.cors=true;
+    $.mobile.allowCrossDomainPages = true;
+});
+	</script>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script> <script type='text/javascript' src='js/date.js'></script>
+    <script type='text/javascript' src='js/knockout-2.0.0.debug.js'></script>
+	<script type='text/javascript' src='js/androidstuck.js'></script>
+</head> 
+<body> 
+
+<div data-role="dialog" id="choosecolor" >
+	
+		<div data-role="header" data-bind="attr:{'data-theme': theme}">
+		<a href="index.html" data-rel="dialog" data-role="button" data-theme="a">Back</a>
+			<h1>Options</h1>
+		</div>
+
+		<div data-role="content"  data-bind="attr:{'data-theme': theme}">
+		 <!-- /navbar -->
+			<ul  id="pagelist" data-role="listview"  data-bind="attr:{'data-theme': theme}">  
+			<div data-role="navbar">
+			<ul>
+				<li><a href="#choosecolor" class="ui-btn-active" data-rel="dialog">Style</a></li>
+				<li><a href="#conf" data-rel="dialog">Configuration</a></li>
+				<li><a href="#about" data-rel="dialog">About</a></li>
+			</ul>
+		  </div>
+				<li>  
+                  <a  href="#" rel="external"> <img  class="ui-li-icon ui-corner-none" src="img/Karkat_symbol.png" />Karkat</a> 
+				 </li><li> 
+				  <a  href="#" rel="external"><img class="ui-li-icon ui-corner-none" src="img/Aradia_symbol.png" />Aradia Megido</a>    					  
+				 </li><li>
+				  <a  href="#" rel="external"><img class="ui-li-icon ui-corner-none" src="img/Tavros_Symbol.png" />Tavros Nitran</a>    	
+				 </li><li> 
+				  <a  href="#" rel="external"><img class="ui-li-icon ui-corner-none" src="img/Sollux_Symbol.png" />Sollux</a>    	
+				  </li><li>	
+    			  <a  href="#" rel="external"><img class="ui-li-icon ui-corner-none" src="img/Nepeta_Symbol.png" />Nepeta Leijon</a>    	
+				  </li><li>
+				  <a  href="#" rel="external"><img class="ui-li-icon ui-corner-none" src="img/Terezi_Symbol.png" />Terezi Pirope</a>    	
+				  </li><li>
+				  <a  href="#" rel="external"><img class="ui-li-icon ui-corner-none" src="img/Vriska_Symbol.png" />Virska Serket</a>    	
+				  </li><li>
+				  <a  href="#" rel="external"><img class="ui-li-icon ui-corner-none" src="img/Kanaya_Symbol.png" />Kanaya Mariam</a>    	
+				  </li><li>
+				  <a  href="#" rel="external"><img class="ui-li-icon ui-corner-none" src="img/Equius_Symbol.png" />Equius</a>    	
+				  </li><li>
+				  <a  href="#" rel="external"><img class="ui-li-icon ui-corner-none" src="img/Gamzee_Symbol.png" />Gamzee</a>    	
+				  </li><li>
+				  <a  href="#" rel="external"><img class="ui-li-icon ui-corner-none" src="img/Eridan_Symbol.png" />Eridan Ampora</a>  
+			      </li><li>
+				  <a  href="#" rel="external"><img class="ui-li-icon ui-corner-none" src="img/Feferi_Symbol.png" />Feferi Peixes</a>    	
+				  <!-- kids -->
+				  </li><li>
+				  <a  href="#" rel="external"><img class="ui-li-icon ui-corner-none" src="img/John_symbol.png" />John</a>    	
+				  </li><li>
+				  <a  href="#" rel="external"><img class="ui-li-icon ui-corner-none" src="img/Rose_symbol.png" />Rose Lalonde</a>    	
+				  </li><li>
+				  <a  href="#" rel="external"><img class="ui-li-icon ui-corner-none" src="img/Jade_symbol.png" />Jade</a>    	
+				  </li><li>
+				  <a  href="#" rel="external"><img class="ui-li-icon ui-corner-none" src="img/Dave_symbol.png" />Dave Strider</a>    	
+				  </li><li>
+				  <a  href="#" rel="external"><img class="ui-li-icon ui-corner-none" src="img/Jade_symbol.png" />Jade</a>    	
+				  </li><li>
+				  <a  href="#" rel="external"><img class="ui-li-icon ui-corner-none" src="img/Dirk_Symbol.png" />Dirk Strider</a>    	
+				  </li><li>
+				  <a  href="#" rel="external"><img class="ui-li-icon ui-corner-none" src="img/Roxy_Symbol.png" />Roxy</a>    	
+				  </li><li>
+				  <a  href="#" rel="external"><img class="ui-li-icon ui-corner-none" src="img/Jake_symbol.png" />Jake</a>    	
+				  </li>                 
+			</ul>       
+		</div>
+</div>
+<div data-role="dialog" id="conf" >
+	
+		<div data-role="header" data-bind="attr:{'data-theme': theme}">
+		<a href="index.html" data-rel="dialog" data-role="button" data-theme="a">Back</a>
+			<h1>Options</h1>
+		</div>		
+		<div data-role="content"  data-bind="attr:{'data-theme': theme}">
+		 <!-- /navbar -->
+			<ul  data-role="listview"  data-bind="attr:{'data-theme': theme}">  
+			<div data-role="navbar">
+			<ul>
+				<li><a href="#choosecolor" data-rel="dialog">Style</a></li>
+				<li><a href="#conf" class="ui-btn-active" data-rel="dialog">Configuration</a></li>
+				<li><a href="#about" data-rel="dialog">About</a></li>
+			</ul>
+		  </div>
+			
+				<li data-role="fieldcontain">
+	        	<label for="slider2">Actualizaciones automaticas:</label>
+				<select name="slider2" id="slider2" data-role="slider">
+					<option value="off">Off</option>
+					<option value="on">On</option>
+				</select>
+				</li><li data-role="fieldcontain">
+				<label for="select-choice-1" class="select">Choose when actualizate:</label>
+				<select name="select-choice-1" id="select-choice-1">
+					<option value="standard">1 hour</option>
+					<option value="rush">1 day</option>
+					<option value="express">2 days</option>
+					<option value="overnight">1 week</option>
+					<option value="overnight">I'll do myself</option>
+				</select>
+				<li class="ui-body ui-body-b">
+				<fieldset class="ui-grid-a">
+						<div class="ui-block-b"><button type="submit" data-bind="attr:{'data-theme': theme}">Submit</button></div>
+			    </fieldset>
+				</li> <li>	    			 					  
+				</li>                   
+			</ul>       
+		</div>
+</div>
+<div data-role="dialog" id="about" >
+	
+		<div data-role="header" data-bind="attr:{'data-theme': theme}">
+		<a href="index.html" data-rel="dialog" data-role="button"  data-theme="a">Back</a>
+			<h1>Options</h1>
+		</div>
+		<div data-role="content" data-bind="attr:{'data-theme': theme}">
+		 <!-- /navbar -->
+			<ul  data-role="listview"  data-bind="attr:{'data-theme': theme}">  
+			<div data-role="navbar">
+			<ul>
+				<li><a href="#choosecolor" data-rel="dialog">Style</a></li>
+				<li><a href="#conf" data-rel="dialog">Configuration</a></li>
+				<li><a href="#about" class="ui-btn-active" data-rel="dialog">About</a></li>
+			</ul>
+		  </div>
+				<li>  
+				<h2> Let me tell you about AndroidStuck!</h2> <p>
+				<span>The name Homestuck and its pj are from Hussie and only this aplication belongs to me.
+				This is why the aplication is free and for read the comic you are redirect to the homestuck page.
+				If you like/hate this aplication you can enter this web and comment me whatever you think this aplication lacks.
+				
+				Thanks to download this aplication and I hope this is usefull for you!<span>
+                 </li><li>	    			 					  
+				</li>                   
+			</ul>       
+		</div>
+		
+</div>
+</body>
+</html>

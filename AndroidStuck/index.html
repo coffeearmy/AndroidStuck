@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="utf-8">
+    <title> AndroidStuck</title> 
+	
+<body>
+ <div data-role="page" id="activity-details" data-add-back-btn="true" >
+
+  <div data-role="header"  data-bind="attr:{'data-theme': theme}">
+
+    <a href="#choosecolor" data-role="button" data-icon="arrow-d" id="edit-activity-button"  data-rel="dialog" data-transition="slidedown" class="ui-btn-right" data-bind="attr:{'data-theme': theme}">Options</a>
+
+    <h1>AndroidStuck</h1>
+
+  </div>
+  <div data-role="navbar" data-iconpos="left" >
+		<ul>
+			<li><a  data-icon="refresh"   data-bind="click: $root.refreshButton" >Refresh</a></li>
+				<li><a data-icon="check" data-bind="click: $root.allRead" href="" >Mark all as read</a></li>
+			<li><a href="http://www.mspaintadventures.com/" rel="external">Go Homestuck!</a></li>
+		</ul>
+	</div>
+  <div data-role="content" >
+		<ul  data-role="listview" id="list" data-bind="foreach: updates , attr:{'data-theme': theme}"  >  
+           <li>  
+                  <a  data-bind="attr:{ href: link, text: title}, click: $root.clickLink" rel="external">
+				  <!-- ko if: $data.read()==1-->
+				  <img src="img/unread.png" />
+				 <!-- /ko -->
+				   <!-- ko if: $data.read()==0-->
+				  <img src="img/read.png" />
+				 <!-- /ko -->
+
+				  <h3 data-bind="{text:title}"></h3>
+				  <p data-bind="{text:date }"></p>
+				  </a>    								  
+           </li>                   
+		</ul>      
+  </div>
+   <div data-role="footer" data-position="fixed" data-bind="attr:{'data-theme': theme}">
+   <h4><span data-bind="text:numNotRead"></span> updates!! from <span data-bind="text:dateNotification"></span></h4>
+   </div>
+</div>
+
+<div data-role="dialog" id="choosecolor" >
+	
+		<div data-role="header" data-bind="attr:{'data-theme': theme}">
+			<h1>Options</h1>
+		</div>
+
+		<div data-role="content"  data-bind="attr:{'data-theme': theme}">
+		 <!-- /navbar -->
+		 <div data-role="collapsible-set">
+		 <div data-role="collapsible" >
+		 <h3>Style</h3>
+		  <ul id="pagelist" data-role="listview"  data-bind="attr:{'data-theme': theme}">		  
+				<li>  
+                  <a  href="index.html" rel="external" data-bind="{  jqmChangePage: 'a'}" data-theme="a"> <img  class="ui-li-icon ui-corner-none" src="img/Karkat_symbol.png" />Karkat</a> 
+				 </li><li> 
+				  <a  href="index.html" rel="external" data-bind="{ jqmChangePage: 'b'}" data-theme="b"><img class="ui-li-icon ui-corner-none" src="img/Aradia_symbol.png" />Aradia Megido</a>    					  
+				 </li><li>
+				  <a  href="index.html" rel="external" data-bind="{ jqmChangePage: 'c'}" data-theme="c"><img class="ui-li-icon ui-corner-none" src="img/Tavros_Symbol.png" />Tavros Nitran</a>    	
+				 </li><li> 
+				  <a  href="index.html" rel="external"data-bind="{ jqmChangePage: 'd'}" data-theme="d"><img class="ui-li-icon ui-corner-none" src="img/Sollux_Symbol.png" />Sollux</a>    	
+				  </li><li>	
+    			  <a  href="index.html" rel="external"data-bind="{ jqmChangePage: 'e'}" data-theme="e"><img class="ui-li-icon ui-corner-none" src="img/Nepeta_Symbol.png" />Nepeta Leijon</a>    	
+				  </li><li>
+				  <a  href="index.html" rel="external"data-bind="{ jqmChangePage: 'f'}" data-theme="f"><img class="ui-li-icon ui-corner-none" src="img/Terezi_Symbol.png" />Terezi Pirope</a>    	
+				  </li><li>
+				  <a  href="index.html" rel="external"data-bind="{ jqmChangePage: 'g'}" data-theme="g"><img class="ui-li-icon ui-corner-none" src="img/Vriska_Symbol.png" />Virska Serket</a>    	
+				  </li><li>
+				  <a  href="index.html" rel="external"data-bind="{ jqmChangePage: 'h'}" data-theme="h"><img class="ui-li-icon ui-corner-none" src="img/Kanaya_Symbol.png" />Kanaya Mariam</a>    	
+				  </li><li>
+				  <a  href="index.html" rel="external" data-bind="{ jqmChangePage: 'i'}"><img class="ui-li-icon ui-corner-none" src="img/Equius_Symbol.png" />Equius</a>    	
+				  </li><li>
+				  <a  href="index.html" rel="external" data-bind="{ jqmChangePage: 'j'}"><img class="ui-li-icon ui-corner-none" src="img/Gamzee_Symbol.png" />Gamzee</a>    	
+				  </li><li>
+				  <a  href="index.html" rel="external" data-bind="{ jqmChangePage: 'k'}"><img class="ui-li-icon ui-corner-none" src="img/Eridan_Symbol.png" />Eridan Ampora</a>  
+			      </li><li>
+				  <a  href="index.html" rel="external" data-bind="{ jqmChangePage: 'l'}"><img class="ui-li-icon ui-corner-none" src="img/Feferi_Symbol.png" />Feferi Peixes</a>    	
+				  <!-- kids -->
+				  </li><li>
+				  <a  href="index.html" rel="external" data-bind="{ jqmChangePage: 'm'}"><img class="ui-li-icon ui-corner-none" src="img/John_symbol.png" />John</a>    	
+				  </li><li>
+				  <a  href="index.html" rel="external" data-bind="{ jqmChangePage: 'n'}"><img class="ui-li-icon ui-corner-none" src="img/Rose_symbol.png" />Rose Lalonde</a>    	
+				  </li><li>
+				  <a  href="index.html" rel="external" data-bind="{ jqmChangePage: 'o'}"><img class="ui-li-icon ui-corner-none" src="img/Jade_symbol.png" />Jade</a>    	
+				  </li><li>
+				  <a  href="index.html" rel="external" data-bind="{ jqmChangePage: 'p'}"><img class="ui-li-icon ui-corner-none" src="img/Dave_symbol.png" />Dave Strider</a>    	
+				  </li><li>
+				  <a  href="index.html" rel="external" data-bind="{ jqmChangePage: 'q'}"><img class="ui-li-icon ui-corner-none" src="img/Jade_symbol.png" />Jade</a>    	
+				  </li><li>
+				  <a  href="index.html" rel="external" data-bind="{ jqmChangePage: 'r'}"><img class="ui-li-icon ui-corner-none" src="img/Dirk_Symbol.png" />Dirk Strider</a>    	
+				  </li><li>
+				  <a  href="index.html" rel="external" data-bind="{ jqmChangePage: 's'}"><img class="ui-li-icon ui-corner-none" src="img/Roxy_Symbol.png" />Roxy</a>    	
+				  </li><li>
+				  <a  href="index.html" rel="external" data-bind="{ jqmChangePage: 't'}"><img class="ui-li-icon ui-corner-none" src="img/Jake_symbol.png" />Jake</a>    	
+				  </li>                 
+			</ul> 
+			</div>
+			
+				
+		 <!-- /navbar -->
+		  <div data-role="collapsible" >
+			<h3>Configuration</h3>
+			<ul  data-role="listview"  data-bind="attr:{'data-theme': theme}">			 
+				<li data-role="fieldcontain">
+	        	<label for="slider2">Automatic Refresh:</label>
+				<select name="slider2" id="slider2" data-role="slider" data-bind=" value: selectedOptionAutomatic">
+					<option value="off">Off</option>
+					<option value="on">On</option>
+				</select>
+				<li data-role="fieldcontain">
+	        	<label for="slider2">Notifications:</label>
+				<select name="slider2" id="slider2" data-role="slider" data-bind=" value: selectedOptionNotification">
+					<option value="off">Off</option>
+					<option value="on">On</option>
+				</select>
+				</li>
+				<li>
+				 <p data-bind="{text: refreshDate }"></p>
+				</li>
+				<li>
+				<p data-bind="{text: selectedOptionRefresh}">
+				</li>
+				<li data-role="fieldcontain">
+				<label for="select-choice-1" class="select" data-bind=" value: selectedOptionRefresh">Frequency of Refresh</label>
+				<select name="select-choice-1" id="select-choice-1">
+					<option value="standard">6 hour</option>
+					<option value="rush">1 day</option>
+					<option value="express">2 days</option>
+					<option value="overnight">1 week</option>
+					<option value="overnight">I'll do myself</option>
+				</select>
+				<li class="ui-body ui-body-b">
+				<fieldset class="ui-grid-a">
+						<div class="ui-block-b"><button type="submit" data-bind="attr:{'data-theme': theme}">Submit</button></div>
+			    </fieldset>
+				</li> <li>	    			 					  
+				</li>                   
+			</ul>       
+		</div>
+			
+			 <div data-role="collapsible" >		 
+				<h2> Let me tell you about AndroidStuck!</h2> <p>
+				<span>The name Homestuck and its pj are from Hussie and only this aplication belongs to me.
+				This is why the aplication is free and for read the comic you are redirect to the homestuck page.
+				If you like/hate this aplication you can enter this web and comment me whatever you think this aplication lacks.
+				
+				Thanks to download this aplication and I hope this is usefull for you!<span>
+			</div>
+			
+			</div>
+		</div>
+</div>
+
+		
+
+
+</body>
+<script type='text/javascript' src='js/knockout-2.0.0.debug.js'></script>
+<script type='text/javascript' src='js/jquery-1.7.1.min.js'></script>
+<script type='text/javascript' src='js/jquery.dst.js'></script>
+<script>
+	$( document ).bind( "mobileinit", function() {
+    // Make your jQuery Mobile framework configuration changes here!
+	$.support.cors=true;
+    $.mobile.allowCrossDomainPages = true;
+});
+	</script>
+	<link rel="stylesheet" href="css/spectrum.css" />
+	<link rel="stylesheet" href="css/jquery.mobile-1.0.1.min.css" />	
+	<script type='text/javascript' src='js/jquery.mobile-1.0.1.min.js'></script>
+	<script type='text/javascript' src='js/date.js'></script>  
+	<script type='text/javascript' src='js/androidstuck.js'></script>
+	
+</html>
+
+</head>
